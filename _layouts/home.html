@@ -1,0 +1,27 @@
+---
+layout: archive
+---
+
+{{ content }}
+
+Take our quizzes on Typeform!
+
+[What quantum gate describes your personality?](https://quantumuniversaled.typeform.com/to/g16bZKv6)
+
+Under construction: What area of quantum computing/science are you?
+
+Under construction: Scavenger hunt to explore the site's learning materials
+
+<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+
+{% if paginator %}
+  {% assign posts = paginator.posts %}
+{% else %}
+  {% assign posts = site.posts %}
+{% endif %}
+
+{% for post in posts %}
+  {% include archive-single.html %}
+{% endfor %}
+
+{% include paginator.html %}

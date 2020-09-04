@@ -25,7 +25,7 @@ var html_str = "";
 var i;
 for (i = 0; i < hardware_strs.length; i++) {
   var idx = (first + i) % hardware_strs.length; 
-  html_str += "<div style=\"border: 1px solid black; width: 50vw; padding: 10px; margin: 10px; text-align: center\"><a href=\"https://fullstackquantumcomputation.tech/hardware/\">" + hardware_strs[idx] + "</a><br><img src=\"/assets/images/areas/hardware/"+hardware_strs[idx]+"."+hardware_ext[idx]+"\"><a href=\"" + img_srcs[idx] + "\"><p style=\"text-align:right; font-size:8px;\">image source</p></a></div><br>\n";
+  html_str += "<div style=\"border: 1px solid black; width: 50vw; padding: 10px; margin: 10px; text-align: center\"><a href=\"/hardware/" + hardware_strs[idx].replace(/ /g, "-") + "/\">" + hardware_strs[idx] + "</a><br><img src=\"/assets/images/areas/hardware/"+hardware_strs[idx]+"."+hardware_ext[idx]+"\"><a href=\"" + img_srcs[idx] + "\"><p style=\"text-align:right; font-size:8px;\">image source</p></a></div><br>\n";
 }
 document.getElementById("hardware").innerHTML = html_str;
 
