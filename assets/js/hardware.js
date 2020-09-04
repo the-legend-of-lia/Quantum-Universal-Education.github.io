@@ -7,7 +7,7 @@ var hardware_ext = [
 "PNG",
 "gif",
 "jpg",
-"svg"
+"png"
 ];
 var img_srcs = [
 "https://en.wikipedia.org/wiki/File:Quantum_Computing;_Ion_Trapping_(5941055642).jpg",  // public domain
