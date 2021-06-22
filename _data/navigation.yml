@@ -5,13 +5,19 @@ main:
     #    url: /categories/
     #  - title: "Tags"
     #    url: /tags/
-  - title: "Contributing"
-    url: /contributing/
-  - title: "Hardware"
-    url: /hardware/
-  - title: "Our Team"
-    url: /our-team/
-  - title: "Curators"
-    url: /curators/
-  - title: "About"
-    url: /about/
+  - title: "Journal Club"
+    url: /journal-club/
+  - title: "Anniversary"
+    url: /anniversary-21/
+  #- title: "Contributing"
+  #  url: /contributing/
+  #- title: "Hardware"
+  #  url: /hardware/
+  #- title: "Our Team"
+  #  url: /our-team/
+  #- title: "Curators"
+  #  url: /curators/
+  #- title: "About"
+  #  url: /about/
+  - title: "About us"
+    url: /about-us/

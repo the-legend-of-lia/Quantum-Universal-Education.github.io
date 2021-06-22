@@ -58,16 +58,28 @@ html {
   }
 }
 
+.archive{
+display: flex;
+align-items: center;
+flex-direction: column;
+}
+
+
 // line height
 .page__content {
   @include breakpoint($large) {
     line-height: 1.6em;
   }
-
+.greedy-nav {
+ img { max-height: 4rem;}
+  }
+  
   @include breakpoint($x-large) {
     line-height: 1.6em;
   }
 }
+
+.page__footer {color: #FFFFFF;}
 
 .page__title {
   line-height: normal;
@@ -149,6 +161,7 @@ html {
 
 .sidebar.sticky::-webkit-scrollbar-thumb {
   background-color: lightgray;
+
 }
 
 // adjust left/right sidebar and page position on x-large

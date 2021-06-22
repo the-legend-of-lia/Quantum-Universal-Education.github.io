@@ -14,11 +14,11 @@ tags:
   - Bell state
 author: Alberto Maldonado Romo
 ---
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script> 
 
-# Quantum Entanglement between Two Qubits
-
-
-"The Bell state, ![eq_bell_state.png](/assets/quantum_programs/1_bell_state/eq_bell_state.png), is of particular interest: if we pick any of the two qubits to measure, we would obtain outcome j0i or j1i with equal probability; and the other qubit is guaranteed to be measured in the same state as the first. This “correlation” between the two qubits are called quantum entanglement. However, this is not to be confused with two correlated random bits each with equal probability of being observed |0> or |1> . 
+"The Bell state,
+$$ | x_1 x_2 > = \frac{1}{\sqrt{2}} | 00 > + \frac{1}{\sqrt{2}} | 11 > $$ 
+, is of particular interest: if we pick any of the two qubits to measure, we would obtain outcome j0i or j1i with equal probability; and the other qubit is guaranteed to be measured in the same state as the first. This “correlation” between the two qubits are called quantum entanglement. However, this is not to be confused with two correlated random bits each with equal probability of being observed |0> or |1> . 
 Proof of the distinction is omitted for the sake of brevity; we refer the interested reader to
 the studies on “local hidden variables” theory, Bell’s inequality, and the CHSH
 game. In essence, the measurement of one qubit intrinsically alters and determines the
@@ -34,11 +34,12 @@ Synthesis Lectures on Computer Architecture)*".
 
 The simplest example for quantum computation is to generate a Bell state from the controlled-not gate to or Cnot with a previous superposition of the qubit and control with the Hadamard gate.
 
-![bell_state.png](/assets/quantum_programs/1_bell_state/bell_state.png)
+![bell_state.png](/assets/quantum_programs/1_bell_state/circuit_bell_state.png)
 
 # Qiskit Program
 The qiskit code to perform the previously mentioned state of bell is described.
 
+![bell_state_qiskit.png](/assets/quantum_programs/1_bell_state/bell_state_qiskit1.png)
 
 ```python
 import qiskit
@@ -88,6 +89,7 @@ plot_state_qsphere(new_sv.data) # show the plot of  the output qubits
 
 ![png](/assets/quantum_programs/1_bell_state/output_4_1.png)
 
+![bell_state_qiskit_2.png](/assets/quantum_programs/1_bell_state/bell_state_qiskit2.png)
 
 
 
@@ -108,6 +110,8 @@ plot_histogram(counts) # plot the output istogram
 ### Qiskit Real Quantum Computing 
 
 Generate the same circuit on a real quantum computing that use 15 qubits.
+
+![bell_state_qiskit_3.png](/assets/quantum_programs/1_bell_state/bell_state_qiskit3.png)
 
 
 ```python
@@ -147,6 +151,7 @@ qiskit.visualization.plot_histogram(counts) # plot the histogram
 # Cirq Program
 The cirq code to perform the previously mentioned state of bell is described.
 
+![bell_state_cirq_1.png](/assets/quantum_programs/1_bell_state/bell_state_cirq1.png)
 
 ```python
 import cirq # call the library
@@ -168,6 +173,8 @@ circuit.append(cirq.measure(q1, key='m1')) # adder the measure in q1
 print("Circuit:")
 print(circuit) # print the circuit at this moment
 
+
+
 # Simulate the circuit.
 
 shots = 100 # number of shots in the simulation
@@ -176,6 +183,7 @@ result = simulator.run(circuit, repetitions=shots) # run the circuit in shots ti
 print("Results:")
 print(result) # show the results
 ```
+![bell_state_cirq_3.png](/assets/quantum_programs/1_bell_state/bell_state_cirq3.png)
 
     Circuit:
     (0, 0): ───H───@───M('m0')───
@@ -194,6 +202,7 @@ counts = cirq.plot_state_histogram(result) # cal the method to generate a plot
 
 ![png](/assets/quantum_programs/1_bell_state/output_12_0.png)
 
+![bell_state_cirq_3.png](/assets/quantum_programs/1_bell_state/bell_state_cirq3.png)
 
 
 ```python
@@ -205,6 +214,7 @@ print("Probabiity =", counts/shots) # print the probabilities of every qubit_sta
 
 # QDK Program
 The QDK (using Q#) code to perform the previously mentioned state of bell is described.
+![bell_state_qdk_1.png](/assets/quantum_programs/1_bell_state/bell_state_qdk1.png)
 
 
 ```python
@@ -245,6 +255,7 @@ operation TestBellState(count : Int, initial : Result) : (Int, Int) { // generat
     /snippet:(2,10): warning QS6003: The namespace is already open.
 
 
+![bell_state_qdk_2.png](/assets/quantum_programs/1_bell_state/bell_state_qdk2.png)
 
 
 
@@ -268,6 +279,7 @@ operation BellState(): Unit{
 <ul><li>BellState</li></ul>
 
 
+![bell_state_qdk_3.png](/assets/quantum_programs/1_bell_state/bell_state_qdk3.png)
 
 
 ```python
@@ -293,7 +305,10 @@ The silq code to perform the previously mentioned state of bell is described.
 ## Introduction to Silq
 
 
+
 For this first example we must take into account the following properties of the silq language:
+
+![bell_state_silq_1.png](/assets/quantum_programs/1_bell_state/bell_state_silq1.png)
 
 
 ### B type variables are Boolean variables.
@@ -332,6 +347,9 @@ To know more about the documentation  check the following link : https://silq.et
 
 ## Generate cnot function
 
+![bell_state_silq_2.png](/assets/quantum_programs/1_bell_state/bell_state_silq2.png)
+
+
 To generate the denied controlled gate it is necessary to indicate two boolean variables: x,y where x represents the control qubit and if it is true it denies the variable y.
 
 
@@ -348,6 +366,9 @@ def cnot(const x:B,y:B):B{ //generate the function Cnot gate
 ```
 
 ## Define main function
+
+![bell_state_silq_3.png](/assets/quantum_programs/1_bell_state/bell_state_silq3.png)
+
 
 We initialize the boolean variables x,y in false or zero state, to the variable x we apply the Hadamard gate, followed by the cnot function where x is the control qubit over the qubit y. Finally, we measure and return the values of the qubits (obtaining their classic values from the two qubits used in the program).
 
@@ -380,12 +401,14 @@ The previous silq code is in the file called bell_state.sql
 
 The strawberry fields code to perform the previously mentioned state of bell is described.
 
+![bell_state_strawberry_fields_1.png](/assets/quantum_programs/1_bell_state/bell_state_sf1.png)
 
 
 ```python
 import strawberryfields as sf
 from strawberryfields import ops
 ```
+![bell_state_strawberry_fields_2.png](/assets/quantum_programs/1_bell_state/bell_state_sf2.png)
 
 
 ```python
@@ -407,6 +430,8 @@ state.trace()
 state.dm().shape # density matrix
 result.samples #print the output states
 ```
+![bell_state_strawberry_fields_3.png](/assets/quantum_programs/1_bell_state/bell_state_sf3.png)
+
 
     Rgate(1.57) | (q[0])
     CXgate(1) | (q[0], q[1])

@@ -34,7 +34,7 @@ Vincent Pisani, Undergraduate at UC Santa Barbara
 
 Yipeng Huang, Assistant Professor of Computer Science at Rutgers University
 
-Alberto Maldonado Romo, Master's student in computer science at the Center for Computing Research, IPN, Mexico
+Alberto Maldonado Romo, PhD student in computer science at the Center for Computing Research, IPN, Mexico
 
 Claudia Zendejas-Morales, undergraduate at the National Autonomous University of Mexico
 
@@ -60,6 +60,12 @@ Rochisha Agarwal, Undergraduate at IIT Roorkee
 
 Michaël Rollin, Electrical Engineer
 
+Victor Onofre, Center of Nanoscience and Nanotechnology (CNyN) of the National Autonomous University of México (UNAM)
+
+Kushagra Sharma, Student at The Coding School
+
+Mark Leal, Former Research Assistant at UC Santa Barbara; Systems Engineer at FLIR Systems
+
 ## Qurators
 
 Sanskruti Wathare, CSE undergrad student
@@ -71,6 +77,14 @@ Hirmay Sandesara, Ahmedabad University
 Harshit Garg, CompSci 3rd year Undergrad at BITS Pilani India
 
 Lia Yeh, PhD student in computer science at the University of Oxford
+
+Alberto Maldonado Romo, PhD student in computer science at the Center for Computing Research, IPN, Mexico
+
+Ricky Kienhoefer, Undergrad at University of Nevada, Reno
+
+Che (Jiji) Chiang, Physics major at National Taiwan University
+
+Samanvay Sharma, grad student at Keio University
 
 ### Here's a map of where all the above people are from!
 <div style="width: 65vw">
